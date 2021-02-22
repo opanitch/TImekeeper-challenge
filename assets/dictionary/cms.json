@@ -1,0 +1,103 @@
+{
+  "contact": {
+    "description": "Thank you for taking the time to check me out!  For any more information or to check out my other code projects, continue on to my LinkedIn, Github, or send me an mail to start a conversation.",
+    "form": {
+      "description": "Here's a contact form to avoid the 'mailto:' hassle!",
+      "inputs": {
+        "email": {
+          "error": "Please enter a correct Email",
+          "label": "E-Mail Address",
+          "placeholder": "username@domain.com",
+          "validation": "EmailAddress@domain.com"
+        },
+        "first-name": {
+          "error": "Please enter a correct Name",
+          "label": "First Name",
+          "placeholder": "First Name",
+          "validation": "a-Z (and most international variations)  , . ' -"
+        },
+        "last-name": {
+          "error": "Please enter a correct Name",
+          "label": "Last Name",
+          "placeholder": "Last Name",
+          "validation": "a-Z (and most international variations)  , . ' -"
+        },
+        "message": {
+          "error": "",
+          "label": "Additional Message (optional)",
+          "placeholder": "Write me...",
+          "validation": ""
+        },
+        "phone-number": {
+          "error": "Please enter a correct Phone Number",
+          "label": "Phone Number",
+          "placeholder": "(XXX) XXX-XXXX",
+          "validation": "US phone numbers only, please"
+        }
+      }
+    },
+    "title": "Contact"
+  },
+  "not-found": {
+    "title": "404 Not Found"
+  },
+  "screen_a": {
+    "form": {
+      "description": "Use this field to set a custom duration in minutes, and reset the Timer.",
+      "inputs": {
+        "duration": {
+          "error": "Please enter an Integer",
+          "label": "Duration (in minutes)",
+          "placeholder": "Duration Placeholder",
+          "validationHelper": "0-9 char accepted"
+        }
+      },
+      "title": "Update Duration"
+    },
+    "title": "Screen A"
+  },
+  "screen_b": {
+    "form": {
+      "description": "Use this field to set a custom duration in minutes, and reset the Timer.",
+      "inputs": {
+        "duration": {
+          "error": "Please enter an Integer",
+          "label": "Duration (in minutes)",
+          "placeholder": "Duration Placeholder",
+          "validationHelper": "0-9 char accepted"
+        }
+      },
+      "title": "Update Duration"
+    },
+    "title": "Screen B"
+  },
+  "screen_c": {
+    "form": {
+      "description": "Use this field to set a custom duration in minutes, and reset the Timer.",
+      "inputs": {
+        "duration": {
+          "error": "Please enter an Integer",
+          "label": "Duration (in minutes)",
+          "placeholder": "Duration Placeholder",
+          "validationHelper": "0-9 char accepted"
+        }
+      },
+      "title": "Update Duration"
+    },
+    "title": "Screen C"
+  },
+  "site": {
+    "common": {
+      "or": "or",
+      "submit": "Submit",
+      "update": "Update"
+    },
+    "copyright": "&copy; 2021 Oren Panitch",
+    "navigation": {
+      "screen_a": "Screen A",
+      "screen_b": "Screen B",
+      "screen_c": "Screen C"
+    },
+    "title": "Time Keeper"
+  }
+}
