@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Yoshi';
+  src: url('ASSETS/fonts/the_yoshi.woff2') format('woff2'),
+    url('ASSETS/fonts/the_yoshi.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nugo Sans Light';
+  src: url('ASSETS/fonts/nugosanslight.woff2') format('woff2'),
+    url('ASSETS/fonts/nugosanslight.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
