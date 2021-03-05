@@ -12,7 +12,6 @@ const dictionaryLoader = {
   },
 };
 const dirList = ['../api', '../public', '../source'];
-const resumeDir = path.resolve(__dirname, '../node_modules/resume-md');
 
 module.exports = () => {
   return [
@@ -39,21 +38,6 @@ module.exports = () => {
       exclude: /node_modules/,
       use: ['babel-loader', 'eslint-loader'],
     },
-    // {
-    //   test: /\.svg$/i,
-    //   use: ['@svgr/webpack'],
-    // },
-    // {
-    //   test: /\.(png|jpe?g|gif|ico)$/i,
-    //   loader: 'file-loader',
-    //   options: {
-    //     esModule: false,
-    //     hash: 'sha512',
-    //     digest: 'hex',
-    //     publicPath: '/assets/images',
-    //     outputPath: './assets/images/',
-    //   },
-    // },
     {
       test: /\.(eot|ttf|woff|woff2)$/,
       loader: 'file-loader',

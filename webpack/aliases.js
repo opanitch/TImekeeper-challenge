@@ -5,12 +5,12 @@ module.exports = {
   API: path.resolve(__dirname, '../api'),
   CONFIG: path.resolve(__dirname, '../api/config'),
   CONSTANTS: path.resolve(__dirname, '../api/constants'),
+  DATA: path.resolve(__dirname, '../api/data'),
   HELPERS: path.resolve(__dirname, '../api/helpers'),
 
   // Application
   Atoms: path.resolve(__dirname, '../source/atoms'),
   Components: path.resolve(__dirname, '../source/components'),
-  Containers: path.resolve(__dirname, '../source/containers'),
   Forms: path.resolve(__dirname, '../source/components/Form/Forms'),
   Pages: path.resolve(__dirname, '../source/pages'),
 

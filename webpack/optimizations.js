@@ -1,21 +1,14 @@
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+// const TerserPlugin = require()
 
-module.exports = {
-  minimizer: [
-    // This will mangle our output to reduce size
-    new UglifyJSPlugin({
-      parallel: true,
-      // uglifyOptions: {
-      //   mangle: {
-      //     safari10: true,
-      //   },
-      // },
-    }),
-  ],
+const { ENVIRONMENTS } = require('../build/global/environments');
+
+module.exports = (env) => ({
+  minimize: env === ENVIRONMENTS.DEVELOPMENT,
+  minimizer: [],
   splitChunks: {
     minChunks: 2,
     cacheGroups: {
       vendors: false,
     },
   },
-};
+});

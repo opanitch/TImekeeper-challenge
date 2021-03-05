@@ -5,12 +5,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = () => {
   return [
-    new CompressionPlugin({
-      test: /\.(js|css|html|json)$/,
-    }),
     new HtmlWebpackPlugin({
       template: 'index.html',
       title: 'TimeKeeper',
+    }),
+    new CompressionPlugin({
+      test: /\.(js|s?css|html|json)$/,
     }),
   ];
 };
