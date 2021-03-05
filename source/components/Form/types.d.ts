@@ -1,6 +1,4 @@
-import { FunctionComponent } from 'react';
-
-import * as STATUSES from 'CONSTANTS/status';
+import { FunctionComponent, ReactNode } from 'react';
 
 import {
   InputProps,
@@ -11,12 +9,8 @@ import {
 import FormEmpty from './FormEmpty';
 
 export interface FormConfigType extends FormType {
-  description?: string;
-  FormBody: FunctionComponent<FormStateProps<any>>;
+  children: (args: RenderArguments) => ReactNode;
   id: string;
-  status: string;
-  title?: string;
-  viewState: FormProps;
 }
 
 export interface FormProps {
@@ -29,14 +23,36 @@ export interface FormProps {
   title?: string;
 }
 
-export interface FormStateProps<P = FormProps> {
+// Form Structure
+interface RenderArguments {
+  FormBody: FunctionComponent<FormBodyProps>;
+  FormFooter: FunctionComponent<FormFooterProps>;
+  FormHeader: FunctionComponent<FormHeaderProps>;
+}
+
+export type FormBodyProps = FormSection & {
+  description?: string;
+};
+
+export type FormFooterProps = FormSection;
+
+export interface FormHeaderProps extends FormSection {
+  title: string;
+}
+
+export interface FormSection extends DivType {
+  children?: ReactNode;
+}
+
+export interface FormStateProps<P = FormProps> extends DivType {
+  description?: string;
+  id: string;
   status: string;
-  viewState: P extends FormProps ? P : never;
+  title?: string;
+  viewState?: P extends FormProps ? P : never;
 }
 
 export interface FormStateSwitcher<P> {
   FormEdit: FunctionComponent<P>;
   FormEmpty?: FunctionComponent<P> | typeof FormEmpty;
 }
-
-export type FormStatuses = UnionOf<typeof STATUSES>;
