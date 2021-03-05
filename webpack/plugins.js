@@ -1,12 +1,21 @@
+const path = require('path');
 const CompressionPlugin = require('compression-webpack-plugin');
-// const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 module.exports = () => {
   return [
     new HtmlWebpackPlugin({
-      template: 'index.html',
+      chunks: ['browser-check', 'main'],
+      chunksSortMode: 'manual',
+      filename: 'index.html',
+      inject: true,
+      minify: {
+        collapseInlineTagWhitespace: true,
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+      },
+      template: path.resolve(__dirname, '../index.html'),
       title: 'TimeKeeper',
     }),
     new CompressionPlugin({
