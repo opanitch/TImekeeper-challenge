@@ -71,7 +71,7 @@ const getTimeKeeperView = createSelector(
           errorText: inputProps.errorText,
           id: inputProps.id || 'error',
           labelText: inputProps.labelText,
-          placeholder: !duration ? `inputProps.placeholder` : `${duration}`,
+          placeholder: !duration ? `${inputProps.placeholder}` : `${duration}`,
           title: inputProps.title,
           type: 'number',
           value: !duration ? 0 : duration,

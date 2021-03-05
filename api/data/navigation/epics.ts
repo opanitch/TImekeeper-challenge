@@ -50,7 +50,7 @@ export const pageLoaded: Epic<Action, Action, StoreShape> = (action$, state$) =>
         DEFAULT_VALUE;
       // `durationType`: If `duration` was assigned from queryString, make it CUSTOM
       const newDurationType =
-        _queryDuration !== _stateDuration ? CUSTOM : DEFAULT;
+        _queryDuration && _queryDuration !== _stateDuration ? CUSTOM : DEFAULT;
       // `startTime`
       const newStartTime =
         _queryCurrentTime - convertMinutesToMilliseconds(newDuration);
@@ -80,8 +80,7 @@ export const pageLoaded: Epic<Action, Action, StoreShape> = (action$, state$) =>
           })
         );
       }
-      console.log('NAVIGATION SET');
-      console.log(newQueryParams);
+
       actions.push(setQueryParams(newQueryParams));
       actions.push(setTimekeeper(newTimekeeper));
 
@@ -107,7 +106,7 @@ export const setQueryString: Epic<Action, Action, StoreShape> = (
       'navigation',
       (first, second) => first.queryParams === second.queryParams
     ),
-    skip(2), // 1st emit on Initial State, 2nd emit on Store Persistor Rehydrate
+    skip(1), // 1st emit on Initial State, 2nd emit on Store Persistor Rehydrate
     tap((state) => setQueries(state)),
     ignoreElements()
   );
